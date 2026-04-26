@@ -23,11 +23,11 @@ if [ ! -f "${CONFIG_FILE}" ]; then
     }
   },
   "model_list": [
-    {
-      "model_name": "${PICOCLAW_MODEL}",
-      "provider": "openrouter"
-    }
-  ],
+      {
+        "model_name": "default-model",
+        "model": "openrouter/${PICOCLAW_MODEL}"
+      }
+    ],
   "telegram": {
     "enabled": ${TELEGRAM_ENABLED},
     "bot_token": "${TELEGRAM_BOT_TOKEN}",
