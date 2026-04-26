@@ -25,7 +25,8 @@ if [ ! -f "${CONFIG_FILE}" ]; then
   "model_list": [
     {
       "model_name": "default-model",
-      "model": "openrouter/${PICOCLAW_MODEL}"
+      "model": "openrouter/${PICOCLAW_MODEL}",
+      "api_key": "${OPENROUTER_API_KEY}"
     }
   ],
   "channels": {
