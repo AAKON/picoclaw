@@ -6,5 +6,4 @@ config/
 .env
 .env.example
 *.md
-LICENSE
 assets/
