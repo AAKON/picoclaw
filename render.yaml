@@ -1,0 +1,16 @@
+services:
+  - type: worker
+    name: picoclaw
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: OPENROUTER_API_KEY
+        sync: false
+      - key: PICOCLAW_MODEL
+        value: anthropic/claude-sonnet-4-6
+      - key: TELEGRAM_ENABLED
+        value: "true"
+      - key: TELEGRAM_BOT_TOKEN
+        sync: false
+      - key: TELEGRAM_USER_ID
+        sync: false
