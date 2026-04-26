@@ -1,4 +1,5 @@
 #!/bin/sh
+set --
 set -e
 
 CONFIG_DIR="/root/.picoclaw"
