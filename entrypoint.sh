@@ -37,4 +37,4 @@ if [ ! -f "${CONFIG_FILE}" ]; then
 EOF
 fi
 
-exec picoclaw gateway start
+exec picoclaw gateway
