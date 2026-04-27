@@ -6,4 +6,5 @@ config/
 .env
 .env.example
 *.md
+!HEARTBEAT.md
 assets/
