@@ -38,7 +38,8 @@ cat > "${CONFIG_FILE}" <<EOF
     "telegram": {
       "enabled": ${TELEGRAM_ENABLED},
       "token": "${TELEGRAM_BOT_TOKEN}",
-      "allow_from": []
+      "allow_from": [],
+      "default_chat_id": "${TELEGRAM_USER_ID}"
     }
   },
   "gateway": {
