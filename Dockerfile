@@ -10,7 +10,7 @@ RUN make build
 
 FROM alpine:latest
 
-RUN apk add --no-cache ca-certificates
+RUN apk add --no-cache ca-certificates tzdata curl openssl bash
 
 COPY --from=builder /app/build/picoclaw /usr/local/bin/picoclaw
 COPY entrypoint.sh /entrypoint.sh
