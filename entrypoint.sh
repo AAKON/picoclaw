@@ -52,4 +52,8 @@ cat > "${CONFIG_FILE}" <<EOF
 }
 EOF
 
+rm -f /root/.picoclaw/workspace/agent_*.json
+rm -f /root/.picoclaw/workspace/session_*.json
+rm -f /root/.picoclaw/workspace/*.state
+
 exec picoclaw gateway
