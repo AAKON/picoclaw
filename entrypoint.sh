@@ -5,13 +5,12 @@ set -e
 CONFIG_DIR="/root/.picoclaw"
 CONFIG_FILE="${CONFIG_DIR}/config.json"
 
-if [ ! -f "${CONFIG_FILE}" ]; then
-    mkdir -p "${CONFIG_DIR}/workspace"
+mkdir -p "${CONFIG_DIR}/workspace"
 
-    PICOCLAW_MODEL="${PICOCLAW_MODEL:-qwen/qwen3.6-plus-preview:free}"
-    TELEGRAM_ENABLED="${TELEGRAM_ENABLED:-false}"
+PICOCLAW_MODEL="${PICOCLAW_MODEL:-qwen/qwen3.6-plus-preview:free}"
+TELEGRAM_ENABLED="${TELEGRAM_ENABLED:-false}"
 
-    cat > "${CONFIG_FILE}" <<EOF
+cat > "${CONFIG_FILE}" <<EOF
 {
   "agents": {
     "defaults": {
@@ -51,6 +50,5 @@ if [ ! -f "${CONFIG_FILE}" ]; then
   }
 }
 EOF
-fi
 
 exec picoclaw gateway
