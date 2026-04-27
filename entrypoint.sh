@@ -15,24 +15,15 @@ cat > "${CONFIG_FILE}" <<EOF
 {
   "agents": {
     "defaults": {
-      "model_name": "default-model",
-      "heartbeat": {
-        "enabled": true,
-        "interval": 60
-      }
+      "model": "${PICOCLAW_MODEL}"
     }
   },
-  "gateway": {
-    "host": "0.0.0.0",
-    "port": 10000
-  },
-  "model_list": [
-    {
-      "model_name": "default-model",
-      "model": "${PICOCLAW_MODEL}",
-      "api_key": "${OPENROUTER_API_KEY}"
+  "providers": {
+    "openrouter": {
+      "api_key": "${OPENROUTER_API_KEY}",
+      "api_base": "https://openrouter.ai/api/v1"
     }
-  ],
+  },
   "tools": {
     "cron": {
       "enabled": true,
@@ -48,12 +39,12 @@ cat > "${CONFIG_FILE}" <<EOF
       "token": "${TELEGRAM_BOT_TOKEN}",
       "allow_from": []
     }
+  },
+  "gateway": {
+    "host": "0.0.0.0",
+    "port": 10000
   }
 }
 EOF
-
-rm -f /root/.picoclaw/workspace/agent_*.json
-rm -f /root/.picoclaw/workspace/session_*.json
-rm -f /root/.picoclaw/workspace/*.state
 
 exec picoclaw gateway
