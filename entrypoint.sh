@@ -8,22 +8,23 @@ CONFIG_FILE="${CONFIG_DIR}/config.json"
 mkdir -p "${CONFIG_DIR}/workspace"
 rm -f "${CONFIG_FILE}"
 
-PICOCLAW_MODEL="${PICOCLAW_MODEL:-nvidia/nemotron-nano-9b-v2:free}"
 TELEGRAM_ENABLED="${TELEGRAM_ENABLED:-false}"
 
 cat > "${CONFIG_FILE}" <<EOF
 {
   "agents": {
     "defaults": {
-      "model": "${PICOCLAW_MODEL}"
+      "model_name": "default-model"
     }
   },
-  "providers": {
-    "openrouter": {
+  "model_list": [
+    {
+      "model_name": "default-model",
+      "model": "nvidia/nemotron-nano-9b-v2:free",
       "api_key": "${OPENROUTER_API_KEY}",
       "api_base": "https://openrouter.ai/api/v1"
     }
-  },
+  ],
   "tools": {
     "cron": {
       "enabled": true,
