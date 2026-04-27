@@ -17,6 +17,9 @@ COPY entrypoint.sh /entrypoint.sh
 
 RUN chmod +x /entrypoint.sh
 
+RUN mkdir -p /root/.picoclaw/workspace
+COPY HEARTBEAT.md /root/.picoclaw/workspace/HEARTBEAT.md
+
 EXPOSE 10000
 
 CMD ["/bin/sh", "/entrypoint.sh"]
