@@ -20,9 +20,9 @@ cat > "${CONFIG_FILE}" <<EOF
   "model_list": [
     {
       "model_name": "default-model",
-      "model": "deepseek/deepseek-chat-v3-0324:free",
-      "api_key": "${OPENROUTER_API_KEY}",
-      "api_base": "https://openrouter.ai/api/v1"
+      "model": "gemini/gemini-2.5-flash-preview",
+      "api_key": "${GEMINI_API_KEY}",
+      "api_base": "https://generativelanguage.googleapis.com/v1beta/openai"
     }
   ],
   "tools": {
