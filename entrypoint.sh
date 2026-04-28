@@ -20,9 +20,9 @@ cat > "${CONFIG_FILE}" <<EOF
   "model_list": [
     {
       "model_name": "default-model",
-      "model": "gemini/gemini-2.5-flash-preview",
+      "model": "gemini-2.5-flash-preview-05-20",
       "api_key": "${GEMINI_API_KEY}",
-      "api_base": "https://generativelanguage.googleapis.com/v1beta/openai"
+      "api_base": "https://generativelanguage.googleapis.com/v1beta/openai/"
     }
   ],
   "tools": {
